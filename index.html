@@ -43,26 +43,26 @@
         }
 
         :root {
-            /* Dark Green, White & Black Theme */
-            --primary: #0B3D2E;
-            --primary-light: #0E5744;
-            --secondary: #146B54;
-            --secondary-light: #1A8869;
-            --accent: #1A8869;
-            --accent-dark: #0E5744;
-            --dark-green: #0B3D2E;
-            --medium-green: #146B54;
-            --light-green-bg: #F0FDF9;
+            /* Professional Dark Green & White Theme */
+            --primary: #0d3b2e;
+            --primary-light: #145c48;
+            --secondary: #1a6b54;
+            --secondary-light: #208060;
+            --accent: #16a571;
+            --accent-dark: #0f7d54;
+            --dark-green: #0d3b2e;
+            --medium-green: #1a6b54;
+            --light-green-bg: #f6faf8;
             --white: #ffffff;
-            --black: #000000;
-            --dark-gray: #1E293B;
-            --light-gray: #F8FAFC;
-            --border-light: #E2E8F0;
-            --text: #1E293B;
-            --text-dark: #000000;
-            --text-light: #475569;
-            --shadow-color: rgba(11, 61, 46, 0.15);
-            --glow: rgba(26, 136, 105, 0.3);
+            --black: #0a1f19;
+            --dark-gray: #1e3832;
+            --light-gray: #f8fafb;
+            --border-light: #e8f0ed;
+            --text: #1e3832;
+            --text-dark: #0a1f19;
+            --text-light: #5a6c66;
+            --shadow-color: rgba(13, 59, 46, 0.1);
+            --glow: rgba(22, 165, 113, 0.2);
         }
 
         html {
@@ -99,7 +99,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-            transition: all 0.25s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         header.scrolled {
@@ -123,7 +123,7 @@
             height: 60px;
             width: auto;
             object-fit: contain;
-            transition: transform 0.25s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .logo:hover .logo-img {
@@ -146,7 +146,7 @@
             font-weight: 500;
             font-size: 0.9rem;
             position: relative;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease-out;
             padding: 4px 0;
         }
 
@@ -158,7 +158,7 @@
             width: 0;
             height: 2px;
             background: var(--accent);
-            transition: width 0.2s ease;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 999px;
         }
 
@@ -251,8 +251,8 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
         }
 
         .hero-content {
@@ -276,7 +276,7 @@
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-20px);
             }
             to {
                 opacity: 1;
@@ -287,7 +287,7 @@
         @keyframes fadeInRight {
             from {
                 opacity: 0;
-                transform: translateX(30px);
+                transform: translateX(20px);
             }
             to {
                 opacity: 1;
@@ -426,7 +426,7 @@
                 0 0 10px rgba(26, 136, 105, 0.5),
                 0 0 20px rgba(26, 136, 105, 0.3),
                 0 0 30px rgba(26, 136, 105, 0.2);
-            animation: glitchText 5s infinite, textGlow 3s ease-in-out infinite;
+            animation: textGlow 4s ease-in-out infinite;
             position: relative;
         }
 
@@ -562,7 +562,7 @@
             backdrop-filter: blur(20px);
             border-radius: 50px;
             border: 2px solid #1A8869;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 15px rgba(26, 136, 105, 0.3);
             color: #0B3D2E;
             position: relative;
@@ -676,7 +676,7 @@
                 0 0 20px #1A8869,
                 0 0 40px #1A8869,
                 0 10px 40px rgba(26, 136, 105, 0.5);
-            animation: neonPulse 2s ease-in-out infinite, gradientShift 3s ease infinite;
+            animation: gradientShift 4s ease infinite;
             border: 2px solid #1A8869;
         }
 
@@ -694,7 +694,6 @@
                 transparent
             );
             transform: rotate(45deg);
-            animation: neonSweep 3s linear infinite;
         }
 
         .btn-primary::after {
@@ -747,7 +746,7 @@
                 0 0 80px #1A8869,
                 0 0 100px #1A8869,
                 0 20px 80px rgba(26, 136, 105, 0.8);
-            animation: neonPulse 1s ease-in-out infinite, gradientShift 2s ease infinite, buttonGlitch 0.5s ease infinite;
+            animation: gradientShift 4s ease infinite;
         }
 
         .btn-primary:hover::after {
@@ -865,7 +864,7 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            animation: fadeInUp 0.8s ease-out, glitchText 5s ease-in-out infinite;
+            animation: fadeInUp 0.8s ease-out;
             color: #0B3D2E;
             text-shadow: 
                 0 0 10px rgba(26, 136, 105, 0.5),
@@ -876,7 +875,7 @@
             font-size: 1.2rem;
             margin-bottom: 3rem;
             color: #146B54;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards, digitalFlicker 4s ease-in-out infinite;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
         .countdown-timer {
@@ -900,7 +899,7 @@
             box-shadow: 
                 0 0 20px rgba(26, 136, 105, 0.3),
                 inset 0 0 20px rgba(26, 136, 105, 0.1);
-            animation: energyPulse 3s ease-in-out infinite, cyberScan 4s ease-in-out infinite;
+            animation: energyPulse 4s ease-in-out infinite;
         }
 
         .countdown-item::before {
@@ -933,7 +932,7 @@
                 0 0 30px rgba(26, 136, 105, 0.5),
                 0 20px 40px rgba(26, 136, 105, 0.3),
                 inset 0 0 30px rgba(26, 136, 105, 0.2);
-            animation: energyPulse 1s ease-in-out infinite, holographicShift 1s ease-in-out infinite;
+            animation: energyPulse 3s ease-in-out infinite;
         }
 
         .countdown-item:hover::after {
@@ -950,7 +949,7 @@
             text-shadow: 
                 0 0 10px rgba(26, 136, 105, 0.5),
                 0 0 20px rgba(26, 136, 105, 0.3);
-            animation: numberPulse 2s ease-in-out infinite, digitalFlicker 3s ease-in-out infinite;
+            animation: numberPulse 3s ease-in-out infinite;
             position: relative;
             z-index: 1;
         }
@@ -980,7 +979,7 @@
             margin-top: 2rem;
             font-size: 1.1rem;
             color: #0B3D2E;
-            animation: fadeInUp 0.8s ease-out 0.6s backwards, digitalFlicker 5s ease-in-out infinite;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
         }
 
         .countdown-date i {
@@ -1084,7 +1083,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            animation: scaleIn 0.6s ease-out backwards, cyberScan 4s ease-in-out infinite;
+            animation: scaleIn 0.6s ease-out backwards;
         }
 
         .mission-card:nth-child(1) {
@@ -1138,7 +1137,7 @@
             box-shadow: 0 20px 60px rgba(26, 136, 105, 0.3),
                         0 0 40px rgba(26, 136, 105, 0.2);
             border-color: #0B3D2E;
-            animation: cyberScan 2s ease-in-out infinite, holographicShift 2s ease-in-out infinite;
+            animation: holographicShift 3s ease-in-out infinite;
         }
 
         .mission-card:hover::after {
@@ -1155,14 +1154,14 @@
             color: #1A8869;
             margin-bottom: 1.5rem;
             transition: all 0.3s;
-            animation: iconPulse 2s ease-in-out infinite, holographicShift 4s ease-in-out infinite;
+            animation: iconPulse 3s ease-in-out infinite;
             filter: drop-shadow(0 0 10px rgba(26, 136, 105, 0.5));
         }
 
         .mission-card:hover i {
             transform: scale(1.2) rotateY(360deg);
             color: #0B3D2E;
-            animation: iconPulse 1s ease-in-out infinite, digitalFlicker 0.5s ease-in-out infinite;
+            animation: iconPulse 2s ease-in-out infinite;
             filter: drop-shadow(0 0 20px rgba(26, 136, 105, 0.8));
         }
 
@@ -1171,7 +1170,6 @@
             margin-bottom: 0.75rem;
             color: #0B3D2E;
             font-weight: 700;
-            animation: digitalFlicker 5s ease-in-out infinite;
         }
 
         .mission-card p {
@@ -1271,7 +1269,7 @@
             gap: 2rem;
             padding: 2rem;
             border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             animation: fadeInLeft 0.6s ease-out backwards;
         }
 
@@ -1342,7 +1340,7 @@
             border-radius: 50px;
             border: 2px solid var(--border);
             font-size: 0.85rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .speaker-tag:hover {
@@ -1417,10 +1415,9 @@
 
         .speakers-section .section-title h2 {
             color: #0B3D2E;
-            text-shadow: 
+            text-shadow:
                 0 0 10px rgba(26, 136, 105, 0.3),
                 0 0 20px rgba(26, 136, 105, 0.2);
-            animation: glitchText 5s ease-in-out infinite;
         }
 
         .speakers-section .section-title h2::after {
@@ -1447,7 +1444,7 @@
             padding: 0.75rem 1.75rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 600;
             font-size: 0.9rem;
             position: relative;
@@ -1532,7 +1529,6 @@
             box-shadow: 
                 0 10px 30px rgba(26, 136, 105, 0.2),
                 inset 0 0 20px rgba(26, 136, 105, 0.05);
-            animation: cyberScan 4s ease-in-out infinite;
         }
 
         .speaker-card::before {
@@ -1555,7 +1551,7 @@
                 0 0 40px rgba(26, 136, 105, 0.2),
                 inset 0 0 30px rgba(26, 136, 105, 0.1);
             border-color: #0B3D2E;
-            animation: holographicShift 2s ease-in-out infinite, energyPulse 2s ease-in-out infinite;
+            animation: energyPulse 3s ease-in-out infinite;
         }
 
         .speaker-image {
@@ -1570,7 +1566,7 @@
             justify-content: center;
             font-size: 3rem;
             color: #1A8869;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             box-shadow: 
@@ -1653,7 +1649,7 @@
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1859,7 +1855,7 @@
             justify-content: center;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .lightbox-close:hover {
@@ -1888,7 +1884,7 @@
             justify-content: center;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .lightbox-nav:hover {
@@ -1921,9 +1917,9 @@
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(26, 136, 105, 0.15);
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid #1A8869;
-            animation: fadeInUp 0.8s ease-out backwards, cyberScan 5s ease-in-out infinite;
+            animation: fadeInUp 0.8s ease-out backwards;
             overflow: hidden;
         }
 
@@ -1949,7 +1945,7 @@
                 0 15px 40px rgba(26, 136, 105, 0.25),
                 0 0 30px rgba(26, 136, 105, 0.15);
             border-color: #0B3D2E;
-            animation: holographicShift 2s ease-in-out infinite, energyPulse 2s ease-in-out infinite;
+            animation: energyPulse 3s ease-in-out infinite;
         }
 
         .testimonial-card > * {
@@ -1959,12 +1955,11 @@
 
         .testimonial-card:hover .quote-icon {
             transform: scale(1.1) rotate(5deg);
-            animation: digitalFlicker 0.5s ease-in-out infinite;
         }
 
         .testimonial-card:hover .author-image {
             transform: scale(1.1);
-            animation: holographicShift 2s ease-in-out infinite;
+            animation: holographicShift 4s ease-in-out infinite;
         }
 
         .quote-icon {
@@ -1983,7 +1978,7 @@
             box-shadow: 
                 0 0 20px rgba(26, 136, 105, 0.5),
                 0 5px 15px rgba(26, 136, 105, 0.3);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             animation: iconPulse 2s ease-in-out infinite;
         }
 
@@ -2013,7 +2008,7 @@
             font-size: 1.5rem;
             flex-shrink: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 3px solid #1A8869;
             box-shadow: 
                 0 0 15px rgba(26, 136, 105, 0.3),
@@ -2082,7 +2077,7 @@
             padding: 2.5rem;
             box-shadow: 0 5px 20px rgba(13, 95, 71, 0.08);
             border: 2px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2108,7 +2103,7 @@
         }
 
         .partner-card img {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .partner-card:hover img {
@@ -2117,7 +2112,7 @@
         }
 
         .partner-card svg {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .partner-card:hover svg {
@@ -2267,7 +2262,7 @@
             text-decoration: none;
             display: block;
             margin-bottom: 0.75rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
         }
 
@@ -2290,7 +2285,7 @@
             height: 45px;
             background: #2a2a2a;
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 0;
             margin: 0;
         }
@@ -3648,7 +3643,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-            transition: all 0.25s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         header.scrolled {
@@ -3672,7 +3667,7 @@
             height: 44px;
             width: auto;
             object-fit: contain;
-            transition: transform 0.25s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .logo:hover .logo-img {
@@ -3695,7 +3690,7 @@
             font-weight: 500;
             font-size: 0.9rem;
             position: relative;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease-out;
             padding: 4px 0;
         }
 
@@ -3707,7 +3702,7 @@
             width: 0;
             height: 2px;
             background: var(--accent);
-            transition: width 0.2s ease;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 999px;
         }
 
@@ -3786,8 +3781,8 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
         }
 
         .hero-content {
@@ -3911,7 +3906,7 @@
             backdrop-filter: blur(20px);
             border-radius: 50px;
             border: 2px solid rgba(0, 229, 160, 0.3);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 32px rgba(0, 229, 160, 0.1);
         }
 
@@ -4261,7 +4256,7 @@
             gap: 2rem;
             padding: 2rem;
             border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .time-slot:hover {
@@ -4321,7 +4316,7 @@
             border-radius: 50px;
             border: 2px solid var(--border);
             font-size: 0.85rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .speaker-tag:hover {
@@ -4412,7 +4407,7 @@
             padding: 0.75rem 1.75rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 600;
             font-size: 0.9rem;
         }
@@ -4495,7 +4490,7 @@
             justify-content: center;
             font-size: 3rem;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .speaker-card:hover .speaker-image {
@@ -4548,7 +4543,7 @@
             color: white;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -4743,7 +4738,7 @@
             justify-content: center;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .lightbox-close:hover {
@@ -4772,7 +4767,7 @@
             justify-content: center;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .lightbox-nav:hover {
@@ -4805,7 +4800,7 @@
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(13, 95, 71, 0.1);
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid var(--border);
         }
 
@@ -4902,7 +4897,7 @@
             padding: 2.5rem;
             box-shadow: 0 5px 20px rgba(13, 95, 71, 0.08);
             border: 2px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -5040,7 +5035,7 @@
             text-decoration: none;
             display: block;
             margin-bottom: 0.75rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
         }
 
@@ -5063,7 +5058,7 @@
             height: 45px;
             background: #2a2a2a;
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 0;
             margin: 0;
         }
