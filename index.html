@@ -2467,6 +2467,2439 @@
         });
     </script>
 </body>
+</html>            line-height: 1.75;
+            color: var(--text);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(14px);
+            padding: 0.8rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            transition: all 0.35s ease;
+        }
+
+        header.scrolled {
+            padding: 0.55rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.03);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.75rem;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.3s ease;
+            padding: 4px 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.4s ease;
+            border-radius: 999px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            padding: 5px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(11, 61, 46, 0.7) 0%, 
+                rgba(11, 61, 46, 0.75) 50%,
+                rgba(11, 61, 46, 0.8) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .date-venue {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .date-venue p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.15rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            border: 2px solid #1A8869;
+            transition: all 0.4s ease;
+            color: #0B3D2E;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .date-venue p:hover {
+            background: rgba(26, 136, 105, 0.1);
+            border-color: #0B3D2E;
+            transform: translateY(-5px);
+        }
+
+        .date-venue i {
+            color: #1A8869;
+            font-size: 1.3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.8rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0B3D2E 0%, #1A8869 50%, #146B54 100%);
+            color: white;
+            border: 2px solid #1A8869;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(26, 136, 105, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.05);
+            border-color: white;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf9 100%);
+            color: #0B3D2E;
+            padding: 5rem 0;
+            text-align: center;
+            border-top: 3px solid #1A8869;
+            border-bottom: 3px solid #1A8869;
+        }
+
+        .countdown-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0B3D2E;
+        }
+
+        .countdown-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #146B54;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: white;
+            border: 3px solid #1A8869;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            min-width: 140px;
+            transition: all 0.4s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-10px) scale(1.08);
+            border-color: #0B3D2E;
+            box-shadow: 0 10px 30px rgba(26, 136, 105, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            color: #0B3D2E;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #146B54;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+            background: #ffffff;
+        }
+
+        .section:nth-child(even) {
+            background: #F0FDF9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            color: #0B3D2E;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #0B3D2E 0%, #1A8869 50%, #0B3D2E 100%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #146B54;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(11, 61, 46, 0.15);
+            border: 2px solid #1A8869;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.3);
+            border-color: #0B3D2E;
+        }
+
+        .mission-card i {
+            font-size: 3rem;
+            color: #1A8869;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .mission-card:hover i {
+            transform: scale(1.2);
+            color: #0B3D2E;
+        }
+
+        .mission-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #0B3D2E;
+            font-weight: 700;
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            color: #146B54;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Programme Section */
+        .programme-section {
+            background: var(--light-green-bg);
+        }
+
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(13, 95, 71, 0.12);
+        }
+
+        .schedule-header {
+            background: linear-gradient(135deg, #0B3D2E 0%, #146B54 50%, #1A8869 100%);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .schedule-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .schedule-header p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        .time-slot {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+        }
+
+        .time-slot:hover {
+            background: #f8f9fb;
+            padding-left: 2.5rem;
+        }
+
+        .time-slot:last-child {
+            border-bottom: none;
+        }
+
+        .time-range {
+            flex: 0 0 130px;
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .activity {
+            flex: 1;
+        }
+
+        .activity h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .activity p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .panel {
+            background: linear-gradient(135deg, #F0FDF9 0%, #E6FAF5 100%);
+            border-left: 4px solid #1A8869;
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .session-speakers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .speaker-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 2px solid var(--border-light);
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+        }
+
+        .speaker-tag:hover {
+            background: #1A8869;
+            color: white;
+            border-color: #1A8869;
+            transform: translateY(-2px);
+        }
+
+        .speaker-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .speaker-tag:hover .speaker-name {
+            color: white;
+        }
+
+        /* Speakers Section */
+        .speakers-section {
+            background: linear-gradient(135deg, #f0fdf9 0%, #ffffff 50%, #f0fdf9 100%);
+            color: #0B3D2E;
+            border-top: 2px solid #1A8869;
+            border-bottom: 2px solid #1A8869;
+        }
+
+        .speaker-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: white;
+            color: #0B3D2E;
+            border: 2px solid #1A8869;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #1A8869, #0B3D2E);
+            color: white;
+            border-color: #0B3D2E;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .speakers-scroll-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .speakers-scroll-wrapper {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .speakers-row {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0;
+            width: max-content;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid #1A8869;
+            min-width: 280px;
+            max-width: 280px;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            background: white;
+            box-shadow: 0 20px 50px rgba(26, 136, 105, 0.3);
+            border-color: #0B3D2E;
+        }
+
+        .speaker-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #1A8869;
+            margin: 0 auto 1.5rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #1A8869;
+            transition: all 0.4s ease;
+        }
+
+        .speaker-card:hover .speaker-image {
+            border-color: #0B3D2E;
+            transform: scale(1.05);
+        }
+
+        .speaker-name-large {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #0B3D2E;
+        }
+
+        .speaker-panel {
+            color: #1A8869;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .speaker-title {
+            color: #146B54;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .speaker-company {
+            color: #1A8869;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .scroll-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .scroll-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1A8869;
+            border: 2px solid #1A8869;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-btn:hover {
+            background: #0B3D2E;
+            transform: scale(1.1);
+            border-color: #0B3D2E;
+        }
+
+        .scroll-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light-green-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(10, 77, 60, 0.15);
+            cursor: pointer;
+            transition: all 0.5s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(26, 136, 105, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(10, 77, 60, 0.8) 70%,
+                rgba(10, 77, 60, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-title {
+            transform: translateY(0);
+        }
+
+        .gallery-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.2s;
+        }
+
+        .gallery-item:hover .gallery-description {
+            transform: translateY(0);
+        }
+
+        .gallery-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 70px;
+            height: 70px;
+            background: #1A8869;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .gallery-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev {
+            left: -70px;
+        }
+
+        .lightbox-next {
+            right: -70px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(26, 136, 105, 0.15);
+            position: relative;
+            transition: all 0.4s ease;
+            border: 2px solid #1A8869;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(26, 136, 105, 0.25);
+            border-color: #0B3D2E;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1A8869, #0B3D2E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #0B3D2E;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1A8869, #0B3D2E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            border: 3px solid #1A8869;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: #0B3D2E;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #146B54;
+            margin: 0;
+        }
+
+        .author-role {
+            display: inline-block;
+            margin-top: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, #1A8869, #0B3D2E);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: white;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(13, 95, 71, 0.08);
+            border: 2px solid var(--border-light);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            text-align: center;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(13, 95, 71, 0.15);
+            border-color: var(--accent);
+            background: var(--light-green-bg);
+        }
+
+        .partner-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.4;
+        }
+
+        /* Registration Section */
+        .registration {
+            background: linear-gradient(135deg, #0d3b2e 0%, #146B54 50%, #1A8869 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .registration .section-title h2 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .registration .section-title h2::after {
+            background: white;
+        }
+
+        .registration .section-title p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1rem;
+        }
+
+        .registration-highlight {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 20px;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            border: 3px solid var(--primary);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+        }
+
+        .registration-highlight:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+
+        .registration-highlight h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .registration-highlight p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+
+        .registration-highlight strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .btn-large {
+            padding: 1.25rem 3rem;
+            font-size: 1.15rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3832;
+            color: #bbb;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer-column p {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: #16a571;
+            padding-left: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #2a2a2a;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-links a:hover {
+            background: #16a571;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .copyright p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.4rem;
+            }
+
+            .theme {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .countdown-title {
+                font-size: 2rem;
+            }
+
+            .countdown-timer {
+                gap: 1.5rem;
+            }
+
+            .countdown-item {
+                padding: 1.5rem 2rem;
+                min-width: 120px;
+            }
+
+            .countdown-number {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                gap: 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav ul li a::after {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .theme {
+                font-size: 1.1rem;
+            }
+
+            .date-venue {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .time-slot {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .time-range {
+                flex: none;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-nav {
+                display: none;
+            }
+
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+            }
+
+            .speaker-card {
+                min-width: 250px;
+                max-width: 250px;
+            }
+
+            .countdown-section {
+                padding: 3rem 0;
+            }
+
+            .countdown-title {
+                font-size: 1.6rem;
+            }
+
+            .countdown-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .countdown-timer {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                padding: 1.25rem 1.5rem;
+                min-width: 100px;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.85rem;
+            }
+
+            .logo-img {
+                height: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 32px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/LOGO%20AYSEF.png" alt="AYSEF Logo" class="logo-img">
+                </div>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#programme">Programme</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#registration">Registration</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu" id="mobile-menu" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Animated Background Slideshow -->
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0025.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0026.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0027.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0028.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0030.jpeg');"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>ASEAN Youth Science & Economic Forum 2025</h1>
+                <p class="tagline">Empowering ASEAN's Next Generation in STEM and Economics</p>
+                <p class="theme">"Powering Progress: Data, Capital & Energy in ASEAN's Future"</p>
+                <div class="date-venue">
+                    <p><i class="far fa-calendar-alt"></i> December 14, 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> CCEC, Bangsar South</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#registration" class="btn btn-primary">Register Now - Free!</a>
+                    <a href="#programme" class="btn btn-outline">View Programme</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="countdown-title">Event Starts In</h2>
+            <p class="countdown-subtitle">Join us for an unforgettable experience at AYSEF 2025</p>
+            
+            <div class="countdown-timer" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About AYSEF</h2>
+                <p>Building a sustainable platform for ASEAN youth to engage, learn, and innovate in STEM and Economics</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Shaping ASEAN's Future Together</h3>
+                    <p>AYSEF is a newly founded organization with a shared vision to create lasting opportunities for young people across ASEAN by empowering them to realize their full potential in STEM and Economics.</p>
+                    <p>We provide a unique platform for sharing ideas, experiences, and passions, with insights from industry leaders and academics, following the model of the Youth Economic Forum (YEF) and London International Youth Science Forum (LIYSF).</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Regional Collaboration</h4>
+                            <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Regional Innovation</h4>
+                            <p>Stimulate discussions for creative solutions in STEM and Economics</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-industry"></i>
+                            <h4>Industry Insight</h4>
+                            <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-heart"></i>
+                            <h4>Fostering Passions</h4>
+                            <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="AYSEF Forum">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Section -->
+    <section class="section programme-section" id="programme">
+        <div class="container">
+            <div class="section-title">
+                <h2>Forum Programme</h2>
+                <p>One day of insightful discussions, networking, and knowledge sharing</p>
+            </div>
+            
+            <div class="schedule-container">
+                <div class="schedule-header">
+                    <h3>December 14, 2025</h3>
+                    <p>CCEC, Bangsar South</p>
+                </div>
+                <div class="schedule-timeline">
+                    <div class="time-slot">
+                        <div class="time-range">09:00 - 09:30</div>
+                        <div class="activity">
+                            <h4>Registration</h4>
+                            <p>Arrival and registration of participants</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">09:30 - 10:00</div>
+                        <div class="activity">
+                            <h4>Opening Ceremony</h4>
+                            <p>Official opening with welcome addresses</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">10:00 - 10:30</div>
+                        <div class="activity">
+                            <h4>Opening Keynote Speech</h4>
+                            <p>Inspiring keynote to set the tone for the forum</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">10:30 - 11:45</div>
+                        <div class="activity panel">
+                            <h4>Energy & Sustainability Panel Discussion</h4>
+                            <p>Charting Malaysia's Energy Landscape: Security, Transition, and Equity</p>
+                            <div class="session-speakers">
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Syahrunizam Samsudin</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Ungku Muhammad</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Syahrulnizam Yek Abdullah</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">11:45 - 12:00</div>
+                        <div class="activity">
+                            <h4>Coffee Break & Networking 1</h4>
+                            <p>Refreshments and networking opportunity</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">12:00 - 13:15</div>
+                        <div class="activity panel">
+                            <h4>The Digital Economy & Artificial Intelligence Panel Discussion</h4>
+                            <p>ASEAN's Digital Future: Empowering Youth, Advancing Connectivity</p>
+                            <div class="session-speakers">
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Nadiah Wan</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Zad Chin</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Khalil Nooh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">13:15 - 13:30</div>
+                        <div class="activity">
+                            <h4>Intermission & Networking 2</h4>
+                            <p>Short break between sessions</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">13:30 - 14:30</div>
+                        <div class="activity">
+                            <h4>Lunch</h4>
+                            <p>Lunch break and networking</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">14:30 - 15:45</div>
+                        <div class="activity panel">
+                            <h4>Finance & Investments Panel Discussion</h4>
+                            <p>Strategic Capital for a Green Economy: ESG, AI, and Sovereign Wealth</p>
+                            <div class="session-speakers">
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Hafiz Kassim</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Hanizan Hood</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Michael Oh Lau</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Alliance Bank Rep</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">15:45 - 16:00</div>
+                        <div class="activity">
+                            <h4>Intermission & Networking 3</h4>
+                            <p>Short break between sessions</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">16:00 - 17:15</div>
+                        <div class="activity panel">
+                            <h4>National Policy Panel Discussion</h4>
+                            <p>Policy as a Catalyst: Guiding ASEAN's Goals through Intervention</p>
+                            <div class="session-speakers">
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Nurhisham Hussein</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Ong Kian Ming</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Nick Khaw</span>
+                                </div>
+                                <div class="speaker-tag">
+                                    <div class="speaker-avatar"><i class="fas fa-user"></i></div>
+                                    <span class="speaker-name">Nik Nazmi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">17:15 - 17:30</div>
+                        <div class="activity">
+                            <h4>Coffee Break & Networking 4</h4>
+                            <p>Final networking opportunity</p>
+                        </div>
+                    </div>
+                    <div class="time-slot">
+                        <div class="time-range">17:30 - 18:00</div>
+                        <div class="activity">
+                            <h4>Closing Ceremony</h4>
+                            <p>Forum wrap-up and acknowledgments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="section speakers-section" id="speakers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Speakers</h2>
+                <p>Learn from industry leaders and experts across four key panels</p>
+            </div>
+
+            <div class="speaker-categories">
+                <button class="category-btn active" data-category="all">All Speakers</button>
+                <button class="category-btn" data-category="energy">Energy & Sustainability</button>
+                <button class="category-btn" data-category="digital">Digital Economy & AI</button>
+                <button class="category-btn" data-category="finance">Finance & Investments</button>
+                <button class="category-btn" data-category="policy">National Policy</button>
+            </div>
+
+            <div class="speakers-scroll-container">
+                <div class="speakers-scroll-wrapper" id="speakers-scroll">
+                    <div class="speakers-row">
+                        <!-- Energy & Sustainability Speakers -->
+                        <div class="speaker-card" data-category="energy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Syahrunizam Samsudin</h3>
+                            <div class="speaker-panel">Energy & Sustainability</div>
+                            <div class="speaker-title">Representative</div>
+                            <div class="speaker-company">Malakoff Corporation</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="energy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Ungku Muhammad</h3>
+                            <div class="speaker-panel">Energy & Sustainability</div>
+                            <div class="speaker-title">Representative</div>
+                            <div class="speaker-company">Gentari</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="energy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Syahrulnizam Yek Abdullah</h3>
+                            <div class="speaker-panel">Energy & Sustainability</div>
+                            <div class="speaker-title">Representative</div>
+                            <div class="speaker-company">Jentayu Sustainable</div>
+                        </div>
+
+                        <!-- Digital Economy & AI Speakers -->
+                        <div class="speaker-card" data-category="digital">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Nadiah Wan</h3>
+                            <div class="speaker-panel">Digital Economy & AI</div>
+                            <div class="speaker-title">Technology Leader</div>
+                            <div class="speaker-company">Digital Innovation</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="digital">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Zad Chin</h3>
+                            <div class="speaker-panel">Digital Economy & AI</div>
+                            <div class="speaker-title">AI Specialist</div>
+                            <div class="speaker-company">Tech Industry</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="digital">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Khalil Nooh</h3>
+                            <div class="speaker-panel">Digital Economy & AI</div>
+                            <div class="speaker-title">Digital Transformation Expert</div>
+                            <div class="speaker-company">Technology Sector</div>
+                        </div>
+
+                        <!-- Finance & Investments Speakers -->
+                        <div class="speaker-card" data-category="finance">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Hafiz Kassim</h3>
+                            <div class="speaker-panel">Finance & Investments</div>
+                            <div class="speaker-title">Investment Strategist</div>
+                            <div class="speaker-company">Financial Services</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="finance">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Hanizan Hood</h3>
+                            <div class="speaker-panel">Finance & Investments</div>
+                            <div class="speaker-title">Financial Analyst</div>
+                            <div class="speaker-company">Investment Sector</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="finance">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Michael Oh Lau</h3>
+                            <div class="speaker-panel">Finance & Investments</div>
+                            <div class="speaker-title">Finance Expert</div>
+                            <div class="speaker-company">Banking Industry</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="finance">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Alliance Bank Representative</h3>
+                            <div class="speaker-panel">Finance & Investments</div>
+                            <div class="speaker-title">Banking Professional</div>
+                            <div class="speaker-company">Alliance Bank</div>
+                        </div>
+
+                        <!-- National Policy Speakers -->
+                        <div class="speaker-card" data-category="policy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Nurhisham Hussein</h3>
+                            <div class="speaker-panel">National Policy</div>
+                            <div class="speaker-title">Policy Advisor</div>
+                            <div class="speaker-company">Government Sector</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="policy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Ong Kian Ming</h3>
+                            <div class="speaker-panel">National Policy</div>
+                            <div class="speaker-title">Former Deputy Minister</div>
+                            <div class="speaker-company">Public Policy</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="policy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Nick Khaw</h3>
+                            <div class="speaker-panel">National Policy</div>
+                            <div class="speaker-title">Policy Strategist</div>
+                            <div class="speaker-company">Economic Planning</div>
+                        </div>
+
+                        <div class="speaker-card" data-category="policy">
+                            <div class="speaker-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="speaker-name-large">Nik Nazmi</h3>
+                            <div class="speaker-panel">National Policy</div>
+                            <div class="speaker-title">Government Representative</div>
+                            <div class="speaker-company">Public Administration</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-controls">
+                    <button class="scroll-btn" id="scroll-left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="scroll-btn" id="scroll-right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners-section" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Knowledge Partners</h2>
+                <p>In collaboration with leading organizations in STEM and economics</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/ASB_Logo.png" alt="Asia School of Business" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/kwsp-epf-logo.png" alt="KWSP EPF" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/khazanah-logo.png" alt="Khazanah Nasional" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/pnb-logo.png" alt="PNB" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <div style="padding: 2rem; text-align: center;">
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #0B3D2E; margin: 0;">GENTARI</h4>
+                    </div>
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/ccf8cd1c3287bbec6e4977a430343cec0fe7e7f7/image-asset.jpg" alt="Alliance Bank" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/JENTAYU-SUSTAINABLES-BERHAD-Logo-Final-01.png" alt="Jentayu Sustainables" style="max-width: 180px; height: auto;">
+                </div>
+                <div class="partner-card">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/Malakoff%20image.png" alt="Malakoff" style="max-width: 180px; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Past Events Gallery</h2>
+                <p>Highlights and memorable moments from our previous forums and activities</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-lightbox="0">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0025.jpeg" alt="Panel Discussion">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Panel Discussion</div>
+                        <div class="gallery-description">Industry leaders engaging with youth participants</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="1">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0026.jpeg" alt="Networking Session">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Networking Session</div>
+                        <div class="gallery-description">Participants connecting and sharing ideas</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="2">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0027.jpeg" alt="Workshop Activity">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Interactive Workshop</div>
+                        <div class="gallery-description">Hands-on learning experience for participants</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="3">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0028.jpeg" alt="Keynote Speech">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Keynote Address</div>
+                        <div class="gallery-description">Inspiring speech from renowned speaker</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="4">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0030.jpeg" alt="Group Discussion">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Collaborative Sessions</div>
+                        <div class="gallery-description">Youth working together on solutions</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="5">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0079.jpeg" alt="Team Building">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Team Building</div>
+                        <div class="gallery-description">Building connections across ASEAN nations</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="6">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0084.jpeg" alt="Opening Ceremony">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Opening Ceremony</div>
+                        <div class="gallery-description">Grand opening of the forum</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="7">
+                    <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/main/IMG_0125.jpeg" alt="Award Ceremony">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Recognition Ceremony</div>
+                        <div class="gallery-description">Celebrating participant achievements</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-lightbox="8">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Breakout Sessions">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Breakout Sessions</div>
+                        <div class="gallery-description">Focused discussions on key topics</div>
+                    </div>
+                    <div class="gallery-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <span class="lightbox-nav lightbox-prev" id="lightbox-prev">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <img src="" alt="Gallery Image" id="lightbox-img">
+            <span class="lightbox-nav lightbox-next" id="lightbox-next">
+                <i class="fas fa-chevron-right"></i>
+            </span>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What They Say</h2>
+                <p>Hear from past participants and speakers about their AYSEF experience</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"Being an attendee of the conference last year, I'd commend the incredible efficiency of the event's organisation and logistics. From initial marketing, to registration, and finally the day of the event itself, everything has run smoothly and seamlessly. Information was relayed to us participants in a timely manner, and any changes or delays were made aware to us as soon as possible. Overall, it was an incredibly well-planned event and I look forward to attending again this year."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Amber Hani</h4>
+                            <p>Kolej Tuanku Ja'afar</p>
+                            <span class="author-role">Delegate 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"I would like to commend the organizers of AYSEF 2024 for delivering a well-organised event that stands on par with other international conferences I've attended. The conference provided actionable insights and a clearer sense of how industry and academia can collaborate to address impending environmental issues. I consider AYSEF 2024 a success and would gladly attend future events and contribute whenever possible. I wholeheartedly recommend AYSEF 2024 to colleagues—5-star performance across all survey questions."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Datuk Haji Beroz Nikmal Mirdin</h4>
+                            <p>Group Managing Director, Jentayu Sustainables</p>
+                            <span class="author-role">Speaker 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">"I was invited to give the keynote address at the first AYSEF as Malaysia's former science minister. I was so impressed with how AYSEF was organised. It was entirely student-led. The topics were relevant, the discussions stimulating and the call for action very clear. This was a gathering of future innovators who can contribute significantly to solving the great challenges of our time. Any young person with a passion for science and technology should attend future conferences. And corporates looking to spot talent should support AYSEF generously!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Khairy Jamaluddin</h4>
+                            <p>Former Minister of Health of Malaysia</p>
+                            <span class="author-role">Keynote Speaker 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section registration" id="registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Registration</h2>
+                <p>Join 300 participants from across ASEAN for this transformative forum</p>
+            </div>
+
+            <div class="registration-highlight">
+                <h3>Free Registration</h3>
+                <p>AYSEF 2025 is completely free for all participants aged 16-23. Don't miss this opportunity to engage with industry leaders and like-minded peers.</p>
+                <p><strong>Limited to 300 participants - Register early to secure your spot!</strong></p>
+                <a href="#" class="btn btn-primary btn-large">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AYSEF 2025</h3>
+                    <p>ASEAN Youth Science and Economic Forum</p>
+                    <p>Empowering ASEAN's Next Generation in STEM and Economics</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/aseanyouthscience" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#programme">Programme</a>
+                    <a href="#speakers">Speakers</a>
+                    <a href="#partners">Partners</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#registration">Registration</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> CCEC, Bangsar South, Kuala Lumpur</p>
+                    <p><i class="fas fa-calendar-alt"></i> December 14, 2025</p>
+                    <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6801060e072809111b0d0e46071a0f">[email&#160;protected]</a></p>
+                    <p><i class="fab fa-instagram"></i> @aseanyouthscience</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AYSEF - ASEAN Youth Science and Economic Forum. All rights reserved.</p>
+                <p>YOUTH STEM FORUM SDN. BHD. (SSM: 202401015874 (1561724-V))</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                const icon = this.querySelector('i');
+                if (navMenu.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (navMenu) {
+                        navMenu.classList.remove('show');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('December 14, 2025 09:00:00').getTime();
+            
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                
+                if (distance < 0) {
+                    document.getElementById('countdown').innerHTML = '<h2 style="color: #0B3D2E; font-size: 2.5rem;">The Event Has Started!</h2>';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+            }
+            
+            // Update immediately
+            updateTimer();
+            
+            // Then update every second
+            setInterval(updateTimer, 1000);
+        }
+        
+        updateCountdown();
+
+        // Hero Background Slideshow
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 4 seconds
+        setInterval(nextSlide, 4000);
+
+        // Gallery Lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        let currentImageIndex = 0;
+
+        const galleryData = [];
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            const title = item.querySelector('.gallery-title').textContent;
+            const description = item.querySelector('.gallery-description').textContent;
+            
+            galleryData.push({
+                src: img.src,
+                alt: img.alt,
+                caption: `${title} - ${description}`
+            });
+
+            item.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = galleryData[index].src;
+            lightboxImg.alt = galleryData[index].alt;
+            lightboxCaption.textContent = galleryData[index].caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryData.length) % galleryData.length;
+            openLightbox(currentImageIndex);
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryData.length;
+            openLightbox(currentImageIndex);
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', showPrevImage);
+        lightboxNext.addEventListener('click', showNextImage);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrevImage();
+                if (e.key === 'ArrowRight') showNextImage();
+            }
+        });
+
+        // Horizontal Scroll for Speakers
+        const speakersScroll = document.getElementById('speakers-scroll');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        const speakerCards = document.querySelectorAll('.speaker-card');
+
+        scrollLeftBtn.addEventListener('click', () => {
+            speakersScroll.scrollBy({
+                left: -350,
+                behavior: 'smooth'
+            });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            speakersScroll.scrollBy({
+                left: 350,
+                behavior: 'smooth'
+            });
+        });
+
+        function updateScrollButtons() {
+            const scrollLeft = speakersScroll.scrollLeft;
+            const maxScroll = speakersScroll.scrollWidth - speakersScroll.clientWidth;
+
+            scrollLeftBtn.disabled = scrollLeft <= 0;
+            scrollRightBtn.disabled = scrollLeft >= maxScroll - 1;
+        }
+
+        speakersScroll.addEventListener('scroll', updateScrollButtons);
+        window.addEventListener('resize', updateScrollButtons);
+        updateScrollButtons();
+
+        // Speaker Category Filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                speakerCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                                       card.style.display = 'none';
+                    }
+                });
+
+                speakersScroll.scrollLeft = 0;
+                updateScrollButtons();
+            });
+        });
+    </script>
+</body>
 </html>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
