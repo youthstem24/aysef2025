@@ -432,421 +432,123 @@
         }
 
         /* About Section */
-        .about-section {
-            padding: 0;
-            overflow: hidden;
-        }
-
-        /* About Hero */
-        .about-hero {
-            position: relative;
-            background: linear-gradient(135deg, #0B3D2E 0%, #146B54 50%, #1A8869 100%);
-            padding: 6rem 0;
-            margin-bottom: 5rem;
-            overflow: hidden;
-        }
-
-        .hero-gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .about-hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            color: white;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .badge-icon {
-            font-size: 1.2rem;
-        }
-
-        .about-hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: white;
-        }
-
-        .about-hero-subtitle {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.95);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Impact Statistics */
-        .impact-stats {
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin: -4rem auto 5rem;
-            max-width: 1200px;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3.5rem;
+            align-items: start;
+            margin-top: 2rem;
         }
 
-        .stat-card {
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .mission-vision {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1400px;
+        }
+
+        .mission-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            flex: 2;
+            max-width: 900px;
+            grid-auto-rows: 1fr;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .mission-vision .about-image {
+            flex: 0 0 350px;
+            margin: 0;
+        }
+
+        .mission-card {
             background: white;
-            padding: 2.5rem 1.5rem;
+            padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(11, 61, 46, 0.15);
+            box-shadow: 0 8px 32px rgba(11, 61, 46, 0.15);
+            border: 2px solid #1A8869;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 280px;
         }
 
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(11, 61, 46, 0.25);
-            border-color: #1A8869;
+        .mission-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.3);
+            border-color: #0B3D2E;
         }
 
-        .stat-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1A8869, #0B3D2E);
-            border-radius: 50%;
+        .mission-card i {
+            font-size: 3rem;
+            color: #1A8869;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .mission-card:hover i {
+            transform: scale(1.2);
+            color: #0B3D2E;
+        }
+
+        .mission-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #0B3D2E;
+            font-weight: 700;
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            color: #146B54;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            transition: all 0.3s ease;
+            align-self: center;
         }
 
-        .stat-card:hover .stat-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .stat-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #0B3D2E;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: #146B54;
-            font-weight: 500;
-        }
-
-        /* Our Story */
-        .our-story {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 5rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .story-visual {
-            position: relative;
-        }
-
-        .story-image-wrapper {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(11, 61, 46, 0.2);
-        }
-
-        .story-image {
+        .about-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
         }
 
-        .story-image-wrapper:hover .story-image {
+        .about-image:hover img {
             transform: scale(1.05);
-        }
-
-        .image-decoration {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, #1A8869, #0B3D2E);
-            border-radius: 30px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        .section-label {
-            display: inline-block;
-            color: #1A8869;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .story-title {
-            font-size: 2.5rem;
-            color: #0B3D2E;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .story-text {
-            font-size: 1.1rem;
-            color: #146B54;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-highlights {
-            margin-top: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .highlight-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .highlight-icon {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #1A8869, #0B3D2E);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .highlight-icon i {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .highlight-text h4 {
-            font-size: 1.1rem;
-            color: #0B3D2E;
-            margin-bottom: 0.3rem;
-            font-weight: 700;
-        }
-
-        .highlight-text p {
-            font-size: 0.95rem;
-            color: #146B54;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Mission Pillars */
-        .mission-pillars {
-            margin-bottom: 5rem;
-        }
-
-        .section-header-center {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-title-large {
-            font-size: 3rem;
-            color: #0B3D2E;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .section-description {
-            font-size: 1.15rem;
-            color: #146B54;
-            line-height: 1.7;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .pillar-card {
-            position: relative;
-            background: white;
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(11, 61, 46, 0.1);
-            transition: all 0.4s ease;
-            overflow: hidden;
-            border: 2px solid transparent;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(11, 61, 46, 0.2);
-            border-color: #1A8869;
-        }
-
-        .pillar-decoration {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, rgba(26, 136, 105, 0.1), rgba(11, 61, 46, 0.1));
-            border-radius: 50%;
-            transition: all 0.4s ease;
-        }
-
-        .pillar-card:hover .pillar-decoration {
-            transform: scale(1.5);
-            opacity: 0.5;
-        }
-
-        .pillar-icon-wrapper {
-            margin-bottom: 1.5rem;
-        }
-
-        .pillar-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #1A8869, #0B3D2E);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
-
-        .pillar-card:hover .pillar-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .pillar-icon i {
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .pillar-title {
-            font-size: 1.5rem;
-            color: #0B3D2E;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .pillar-description {
-            font-size: 1rem;
-            color: #146B54;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* About CTA */
-        .about-cta {
-            position: relative;
-            background: linear-gradient(135deg, #0B3D2E 0%, #146B54 50%, #1A8869 100%);
-            border-radius: 30px;
-            padding: 4rem 3rem;
-            margin-bottom: 4rem;
-            overflow: hidden;
-        }
-
-        .cta-background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            color: white;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .cta-text {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: white;
-            color: #0B3D2E;
-            padding: 1.25rem 3rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            background: #f8f8f8;
-        }
-
-        .cta-button i {
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover i {
-            transform: translateX(5px);
         }
 
         /* Programme Section */
@@ -1713,38 +1415,22 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .about-hero-title {
-                font-size: 2.5rem;
-            }
-
-            .about-hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .impact-stats {
-                grid-template-columns: repeat(2, 1fr);
-                margin: -3rem auto 4rem;
-            }
-
-            .our-story {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .story-title {
-                font-size: 2rem;
-            }
-
-            .pillars-grid {
+            .about-content {
                 grid-template-columns: 1fr;
             }
 
-            .section-title-large {
-                font-size: 2.2rem;
+            .mission-vision {
+                flex-direction: column;
             }
 
-            .cta-title {
-                font-size: 2rem;
+            .mission-vision .about-image {
+                flex: 1;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .mission-cards-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero-content h1 {
@@ -2164,175 +1850,46 @@
     </section>
 
     <!-- About Section -->
-    <section class="section about-section" id="about">
-        <!-- Hero Introduction -->
-        <div class="about-hero">
-            <div class="container">
-                <div class="about-hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-icon">✦</span>
-                        <span>Empowering ASEAN Youth</span>
-                    </div>
-                    <h1 class="about-hero-title">Where Innovation Meets Opportunity</h1>
-                    <p class="about-hero-subtitle">AYSEF is pioneering a movement across Southeast Asia, bringing together the brightest young minds to shape the future of STEM and Economics in our region.</p>
-                </div>
-            </div>
-            <div class="hero-gradient-overlay"></div>
-        </div>
-
-        <!-- Impact Statistics -->
+    <section class="section" id="about">
         <div class="container">
-            <div class="impact-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-globe-asia"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-number" data-target="10">10+</h3>
-                        <p class="stat-label">ASEAN Countries</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-number">200+</h3>
-                        <p class="stat-label">Young Leaders</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-number">4</h3>
-                        <p class="stat-label">Expert Panels</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="stat-number">∞</h3>
-                        <p class="stat-label">Possibilities</p>
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>About AYSEF</h2>
+                <p>Building a sustainable platform for ASEAN youth to engage, learn, and innovate in STEM and Economics</p>
             </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Shaping ASEAN's Future Together</h3>
+                    <p>AYSEF is a newly founded organization with a shared vision to create lasting opportunities for young people across ASEAN by empowering them to realize their full potential in STEM and Economics.</p>
+                    <p>We provide a unique platform for sharing ideas, experiences, and passions, with insights from industry leaders and academics, following the model of the Youth Economic Forum (YEF) and London International Youth Science Forum (LIYSF).</p>
 
-            <!-- Our Story -->
-            <div class="our-story">
-                <div class="story-visual">
-                    <div class="story-image-wrapper">
-                        <img src="IMG_1592.PNG" alt="AYSEF Forum" class="story-image">
-                        <div class="image-decoration"></div>
-                    </div>
-                </div>
-                <div class="story-content">
-                    <span class="section-label">Our Story</span>
-                    <h2 class="story-title">Building Bridges Across ASEAN</h2>
-                    <p class="story-text">AYSEF was born from a powerful vision: to create lasting opportunities for young people across ASEAN by empowering them to realize their full potential in STEM and Economics.</p>
-                    <p class="story-text">Inspired by the success of the Youth Economic Forum (YEF) and London International Youth Science Forum (LIYSF), we've built a unique platform where ideas flourish, experiences are shared, and passions are ignited through meaningful connections with industry leaders and academics.</p>
-
-                    <div class="story-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="highlight-text">
-                                <h4>Expert-Led Discussions</h4>
-                                <p>Learn directly from industry pioneers and academic leaders</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="highlight-text">
-                                <h4>Regional Network</h4>
-                                <p>Connect with peers across all ASEAN member states</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="highlight-text">
-                                <h4>Real-World Impact</h4>
-                                <p>Transform knowledge into actionable solutions for our region</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mission Pillars -->
-            <div class="mission-pillars">
-                <div class="section-header-center">
-                    <span class="section-label">What Drives Us</span>
-                    <h2 class="section-title-large">Our Mission Pillars</h2>
-                    <p class="section-description">Four foundational principles that guide everything we do at AYSEF</p>
-                </div>
-
-                <div class="pillars-grid">
-                    <div class="pillar-card pillar-1">
-                        <div class="pillar-icon-wrapper">
-                            <div class="pillar-icon">
+                    <div class="mission-vision">
+                        <div class="mission-cards-grid">
+                            <div class="mission-card">
                                 <i class="fas fa-handshake"></i>
+                                <h4>Regional Collaboration</h4>
+                                <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Regional Innovation</h4>
+                                <p>Stimulate discussions for creative solutions in STEM and Economics</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-industry"></i>
+                                <h4>Industry Insight</h4>
+                                <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Fostering Passions</h4>
+                                <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
                             </div>
                         </div>
-                        <h3 class="pillar-title">Regional Collaboration</h3>
-                        <p class="pillar-description">Foster deep cooperation among ASEAN youth to address scientific and economic challenges collectively, building a stronger, more united region.</p>
-                        <div class="pillar-decoration"></div>
-                    </div>
-
-                    <div class="pillar-card pillar-2">
-                        <div class="pillar-icon-wrapper">
-                            <div class="pillar-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
+                        <div class="about-image">
+                            <img src="IMG_1592.PNG" alt="AYSEF Forum">
                         </div>
-                        <h3 class="pillar-title">Innovation & Creativity</h3>
-                        <p class="pillar-description">Stimulate groundbreaking discussions and creative thinking to develop innovative solutions in STEM and Economics for tomorrow's challenges.</p>
-                        <div class="pillar-decoration"></div>
-                    </div>
-
-                    <div class="pillar-card pillar-3">
-                        <div class="pillar-icon-wrapper">
-                            <div class="pillar-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                        </div>
-                        <h3 class="pillar-title">Expert Mentorship</h3>
-                        <p class="pillar-description">Provide unparalleled opportunities to learn from and engage with industry leaders, policymakers, and academic experts shaping our future.</p>
-                        <div class="pillar-decoration"></div>
-                    </div>
-
-                    <div class="pillar-card pillar-4">
-                        <div class="pillar-icon-wrapper">
-                            <div class="pillar-icon">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                        </div>
-                        <h3 class="pillar-title">Igniting Passions</h3>
-                        <p class="pillar-description">Cultivate genuine enthusiasm and lifelong passion for scientific and economic pursuits among the next generation of ASEAN leaders.</p>
-                        <div class="pillar-decoration"></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="about-cta">
-                <div class="cta-content">
-                    <h2 class="cta-title">Ready to Shape ASEAN's Future?</h2>
-                    <p class="cta-text">Join us at AYSEF 2025 and be part of a transformative experience that will connect you with brilliant minds, industry leaders, and opportunities that will shape your future.</p>
-                    <a href="#register" class="cta-button">
-                        <span>Secure Your Spot</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="cta-background-pattern"></div>
             </div>
         </div>
     </section>
