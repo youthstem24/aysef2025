@@ -455,16 +455,22 @@
         }
 
         .mission-vision {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .mission-cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0.75rem;
-            margin-top: 2rem;
+            flex: 1;
         }
 
         .mission-vision .about-image {
-            grid-column: 1 / -1;
-            margin: 1rem 0;
-            margin-left: 3rem;
+            flex: 0 0 400px;
+            margin: 0;
         }
 
         .mission-card {
@@ -1400,6 +1406,16 @@
             }
 
             .mission-vision {
+                flex-direction: column;
+            }
+
+            .mission-vision .about-image {
+                flex: 1;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .mission-cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1774,28 +1790,30 @@
                     <p>We provide a unique platform for sharing ideas, experiences, and passions, with insights from industry leaders and academics, following the model of the Youth Economic Forum (YEF) and London International Youth Science Forum (LIYSF).</p>
                     
                     <div class="mission-vision">
-                        <div class="mission-card">
-                            <i class="fas fa-handshake"></i>
-                            <h4>Regional Collaboration</h4>
-                            <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
-                        </div>
-                        <div class="mission-card">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>Regional Innovation</h4>
-                            <p>Stimulate discussions for creative solutions in STEM and Economics</p>
+                        <div class="mission-cards-grid">
+                            <div class="mission-card">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Regional Collaboration</h4>
+                                <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Regional Innovation</h4>
+                                <p>Stimulate discussions for creative solutions in STEM and Economics</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-industry"></i>
+                                <h4>Industry Insight</h4>
+                                <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
+                            </div>
+                            <div class="mission-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Fostering Passions</h4>
+                                <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
+                            </div>
                         </div>
                         <div class="about-image">
                             <img src="https://raw.githubusercontent.com/youthstem24/aysef2025/fceb02a0f4bd942fee381963ef298b9b9696a780/IMG_1592.PNG" alt="AYSEF Forum">
-                        </div>
-                        <div class="mission-card">
-                            <i class="fas fa-industry"></i>
-                            <h4>Industry Insight</h4>
-                            <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
-                        </div>
-                        <div class="mission-card">
-                            <i class="fas fa-heart"></i>
-                            <h4>Fostering Passions</h4>
-                            <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
                         </div>
                     </div>
                 </div>
