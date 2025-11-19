@@ -50,6 +50,8 @@
             width: 90%;
             max-width: 1180px;
             margin: 0 auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         /* Header */
@@ -147,7 +149,7 @@
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 6rem 2rem 4rem;
+            padding: 8rem 1rem 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -196,6 +198,8 @@
             position: relative;
             z-index: 10;
             max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .hero-content h1 {
@@ -227,9 +231,11 @@
         .date-venue {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 3rem;
-            margin: 2.5rem 0;
+            margin: 2.5rem auto;
             flex-wrap: wrap;
+            max-width: 100%;
         }
 
         .date-venue p {
@@ -340,8 +346,11 @@
         .countdown-timer {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .countdown-item {
@@ -389,6 +398,7 @@
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
+            width: 100%;
         }
 
         .section-title h2 {
@@ -1159,10 +1169,12 @@
             padding: 3.5rem;
             border-radius: 20px;
             max-width: 700px;
+            width: 90%;
             margin: 2rem auto 0;
             border: 3px solid var(--primary);
             box-shadow: 0 20px 60px rgba(0,0,0,0.2);
             transition: all 0.4s ease;
+            text-align: center;
         }
 
         .registration-highlight:hover {
@@ -1363,21 +1375,35 @@
                 display: block;
             }
 
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
+                margin-bottom: 1rem;
             }
 
             .tagline {
                 font-size: 1.2rem;
+                margin-bottom: 0.75rem;
             }
 
             .theme {
                 font-size: 1.1rem;
+                margin-bottom: 2rem;
             }
 
             .date-venue {
                 flex-direction: column;
                 gap: 1rem;
+                align-items: center;
+                width: 100%;
+            }
+
+            .date-venue p {
+                width: auto;
+                max-width: 90%;
             }
 
             .time-slot {
@@ -1399,10 +1425,15 @@
 
             .cta-buttons {
                 flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 0 1rem;
             }
 
             .btn {
                 width: 100%;
+                max-width: 320px;
+                justify-content: center;
             }
 
             .gallery-grid {
@@ -1456,6 +1487,14 @@
             .logo-img {
                 height: 36px;
             }
+
+            .registration-highlight {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .registration-highlight h3 {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1465,10 +1504,67 @@
 
             .container {
                 width: 95%;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            .hero {
+                padding: 5rem 0.75rem 2.5rem;
+            }
+
+            .hero-content {
+                padding: 0 0.5rem;
             }
 
             .hero-content h1 {
                 font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 0.75rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .theme {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .date-venue p {
+                font-size: 1rem;
+                padding: 0.6rem 1.25rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .registration-highlight {
+                padding: 2rem 1rem;
+                width: 95%;
+            }
+
+            .registration-highlight h3 {
+                font-size: 1.75rem;
+            }
+
+            .registration-highlight p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
             }
         }
     </style>
