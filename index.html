@@ -433,92 +433,138 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 3.5rem;
-            align-items: start;
-            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: center;
         }
 
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        .about-hero-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(11, 61, 46, 0.2);
+            position: relative;
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.6s ease;
+        }
+
+        .about-hero-image:hover {
+            transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+            box-shadow: 0 35px 90px rgba(11, 61, 46, 0.3);
+        }
+
+        .about-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .about-hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--primary);
             font-weight: 700;
+            position: relative;
+            display: inline-block;
         }
 
-        .about-text p {
+        .about-intro-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1A8869, #0B3D2E);
+            border-radius: 2px;
+        }
+
+        .about-intro-text p {
             margin-bottom: 1.5rem;
             color: var(--text);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
         }
 
-        .mission-vision {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 2rem;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1400px;
-        }
-
-        .mission-cards-grid {
+        .mission-cards-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-            flex: 2;
-            max-width: 900px;
-            grid-auto-rows: 1fr;
-            align-items: stretch;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             width: 100%;
-        }
-
-        .mission-vision .about-image {
-            flex: 0 0 500px;
-            margin: 0;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .mission-card {
             background: white;
-            padding: 2.5rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(11, 61, 46, 0.15);
+            box-shadow: 0 8px 32px rgba(11, 61, 46, 0.12);
             border: 2px solid #1A8869;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-            min-height: 280px;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1A8869, #0B3D2E);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .mission-card:hover::before {
+            transform: scaleX(1);
         }
 
         .mission-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.3);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.25);
             border-color: #0B3D2E;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf9 100%);
         }
 
         .mission-card i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #1A8869;
             margin-bottom: 1.5rem;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
         }
 
         .mission-card:hover i {
-            transform: scale(1.2);
+            transform: scale(1.15) rotate(5deg);
             color: #0B3D2E;
         }
 
         .mission-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
             color: #0B3D2E;
             font-weight: 700;
         }
@@ -528,28 +574,6 @@
             color: #146B54;
             line-height: 1.7;
             margin: 0;
-        }
-
-        .about-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            align-self: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
         }
 
         /* Programme Section */
@@ -1416,22 +1440,17 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
+            .mission-cards-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
 
-            .mission-vision {
-                flex-direction: column;
+            .about-intro-text h3 {
+                font-size: 2rem;
             }
 
-            .mission-vision .about-image {
-                flex: 1;
-                width: 100%;
-                max-width: 400px;
-            }
-
-            .mission-cards-grid {
-                grid-template-columns: 1fr;
+            .about-intro-text p {
+                font-size: 1.05rem;
             }
 
             .hero-content h1 {
@@ -1561,6 +1580,36 @@
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+
+            .mission-cards-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                gap: 3rem;
+            }
+
+            .about-hero-image {
+                max-width: 100%;
+                border-radius: 16px;
+            }
+
+            .about-intro-text h3 {
+                font-size: 1.75rem;
+            }
+
+            .about-intro-text p {
+                font-size: 1rem;
+            }
+
+            .mission-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .mission-card i {
+                font-size: 2.75rem;
             }
 
             .about-hero {
@@ -1858,37 +1907,39 @@
                 <p>Building a sustainable platform for ASEAN youth to engage, learn, and innovate in STEM and Economics</p>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <!-- Featured Image -->
+                <div class="about-hero-image">
+                    <img src="IMG_1592.PNG" alt="AYSEF Forum">
+                </div>
+
+                <!-- Intro Text -->
+                <div class="about-intro-text">
                     <h3>Shaping ASEAN's Future Together</h3>
                     <p>AYSEF is a newly founded organization with a shared vision to create lasting opportunities for young people across ASEAN by empowering them to realize their full potential in STEM and Economics.</p>
                     <p>We provide a unique platform for sharing ideas, experiences, and passions, with insights from industry leaders and academics, following the model of the Youth Economic Forum (YEF) and London International Youth Science Forum (LIYSF).</p>
+                </div>
 
-                    <div class="mission-vision">
-                        <div class="mission-cards-grid">
-                            <div class="mission-card">
-                                <i class="fas fa-handshake"></i>
-                                <h4>Regional Collaboration</h4>
-                                <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
-                            </div>
-                            <div class="mission-card">
-                                <i class="fas fa-lightbulb"></i>
-                                <h4>Regional Innovation</h4>
-                                <p>Stimulate discussions for creative solutions in STEM and Economics</p>
-                            </div>
-                            <div class="mission-card">
-                                <i class="fas fa-industry"></i>
-                                <h4>Industry Insight</h4>
-                                <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
-                            </div>
-                            <div class="mission-card">
-                                <i class="fas fa-heart"></i>
-                                <h4>Fostering Passions</h4>
-                                <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
-                            </div>
-                        </div>
-                        <div class="about-image">
-                            <img src="IMG_1592.PNG" alt="AYSEF Forum">
-                        </div>
+                <!-- Mission Cards Grid -->
+                <div class="mission-cards-container">
+                    <div class="mission-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Regional Collaboration</h4>
+                        <p>Foster cooperation among ASEAN youth to address scientific challenges collectively</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Regional Innovation</h4>
+                        <p>Stimulate discussions for creative solutions in STEM and Economics</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-industry"></i>
+                        <h4>Industry Insight</h4>
+                        <p>Provide opportunities to learn from and engage with leaders in STEM and economics</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Fostering Passions</h4>
+                        <p>Cultivate enthusiasm for scientific and economic pursuits among ASEAN youth</p>
                     </div>
                 </div>
             </div>
