@@ -1840,7 +1840,7 @@
             width: 100%;
             height: 100%;
             z-index: 10000;
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf9 100%);
+            background: linear-gradient(135deg, #0d3b2e 0%, #16a571 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1855,11 +1855,6 @@
 
         .welcome-content {
             text-align: center;
-            background: white;
-            padding: 3rem 4rem;
-            border-radius: 20px;
-            border: 3px solid #1A8869;
-            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.2);
             animation: slideUp 0.8s ease forwards;
         }
 
@@ -1875,8 +1870,9 @@
         }
 
         .welcome-logo {
-            width: 180px;
+            width: 150px;
             height: auto;
+            filter: brightness(0) invert(1);
             animation: scaleLogo 0.8s ease forwards;
             opacity: 0;
             animation-delay: 0.3s;
@@ -1894,29 +1890,31 @@
         }
 
         .welcome-title {
-            color: #0B3D2E;
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 900;
             margin-top: 1.5rem;
             opacity: 0;
             animation: fadeInText 0.6s ease forwards;
             animation-delay: 0.5s;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .welcome-subtitle {
-            color: #146B54;
-            font-size: 1.2rem;
-            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            margin-top: 0.5rem;
             opacity: 0;
             animation: fadeInText 0.6s ease forwards;
             animation-delay: 0.7s;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .welcome-year {
-            color: rgba(26, 136, 105, 0.15);
+            font-family: 'Poppins', sans-serif;
+            color: rgba(255, 255, 255, 0.15);
             font-size: 8rem;
             font-weight: 900;
             position: absolute;
@@ -1924,6 +1922,7 @@
             opacity: 0;
             animation: fadeInText 0.6s ease forwards;
             animation-delay: 0.9s;
+            letter-spacing: -2px;
         }
 
         @keyframes fadeInText {
@@ -1942,21 +1941,17 @@
         }
 
         @media (max-width: 768px) {
-            .welcome-content {
-                padding: 2rem 2.5rem;
-                margin: 1rem;
-            }
             .welcome-title {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
             .welcome-subtitle {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             .welcome-year {
                 font-size: 5rem;
             }
             .welcome-logo {
-                width: 120px;
+                width: 100px;
             }
         }
     </style>
