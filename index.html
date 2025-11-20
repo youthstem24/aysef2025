@@ -1840,7 +1840,7 @@
             width: 100%;
             height: 100%;
             z-index: 10000;
-            background: linear-gradient(135deg, #0d3b2e 0%, #16a571 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf9 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1855,6 +1855,11 @@
 
         .welcome-content {
             text-align: center;
+            background: white;
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            border: 3px solid #1A8869;
+            box-shadow: 0 20px 60px rgba(26, 136, 105, 0.2);
             animation: slideUp 0.8s ease forwards;
         }
 
@@ -1870,9 +1875,8 @@
         }
 
         .welcome-logo {
-            width: 220px;
+            width: 180px;
             height: auto;
-            filter: brightness(0) invert(1);
             animation: scaleLogo 0.8s ease forwards;
             opacity: 0;
             animation-delay: 0.3s;
@@ -1890,26 +1894,29 @@
         }
 
         .welcome-title {
-            color: #ffffff;
-            font-size: 3.5rem;
-            font-weight: 700;
+            color: #0B3D2E;
+            font-size: 2.5rem;
+            font-weight: 800;
             margin-top: 1.5rem;
             opacity: 0;
             animation: fadeInText 0.6s ease forwards;
             animation-delay: 0.5s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .welcome-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.6rem;
-            margin-top: 0.5rem;
+            color: #146B54;
+            font-size: 1.2rem;
+            margin-top: 0.75rem;
             opacity: 0;
             animation: fadeInText 0.6s ease forwards;
             animation-delay: 0.7s;
+            font-weight: 500;
         }
 
         .welcome-year {
-            color: rgba(255, 255, 255, 0.15);
+            color: rgba(26, 136, 105, 0.15);
             font-size: 8rem;
             font-weight: 900;
             position: absolute;
@@ -1935,11 +1942,15 @@
         }
 
         @media (max-width: 768px) {
+            .welcome-content {
+                padding: 2rem 2.5rem;
+                margin: 1rem;
+            }
             .welcome-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .welcome-subtitle {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             .welcome-year {
                 font-size: 5rem;
