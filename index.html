@@ -1833,128 +1833,134 @@
         }
 
         /* Welcome Screen */
-        #welcome-screen {
+        .welcome-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 10000;
-            background: linear-gradient(135deg, #0d3b2e 0%, #16a571 100%);
+            background: linear-gradient(135deg, #0d3b2e 0%, #1a6b54 50%, #16a571 100%);
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            opacity: 1;
-            transition: opacity 0.8s ease;
+            z-index: 10000;
+            animation: fadeIn 0.5s ease-in;
         }
 
-        #welcome-screen.fade-out {
-            opacity: 0;
+        .welcome-screen.fade-out {
+            animation: fadeOut 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
 
         .welcome-content {
             text-align: center;
-            animation: slideUp 0.8s ease forwards;
+            color: white;
+            animation: slideUp 1s ease-out;
         }
 
         @keyframes slideUp {
             from {
-                transform: translateY(30px);
                 opacity: 0;
+                transform: translateY(30px);
             }
             to {
-                transform: translateY(0);
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
         .welcome-logo {
-            width: 150px;
-            height: auto;
-            filter: brightness(0) invert(1);
-            animation: scaleLogo 0.8s ease forwards;
-            opacity: 0;
-            animation-delay: 0.3s;
+            margin-bottom: 3rem;
+            animation: scaleIn 0.8s ease-out;
         }
 
-        @keyframes scaleLogo {
+        @keyframes scaleIn {
             from {
-                transform: scale(0.5);
                 opacity: 0;
+                transform: scale(0.8);
             }
             to {
-                transform: scale(1);
                 opacity: 1;
+                transform: scale(1);
             }
+        }
+
+        .welcome-logo img {
+            height: 150px;
+            width: auto;
+            filter: brightness(0) invert(1);
         }
 
         .welcome-title {
-            color: #ffffff;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            opacity: 0;
-            animation: fadeInText 0.6s ease forwards;
-            animation-delay: 0.5s;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: white;
+            animation: fadeIn 1s ease-out 0.3s backwards;
         }
 
         .welcome-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            opacity: 0;
-            animation: fadeInText 0.6s ease forwards;
-            animation-delay: 0.7s;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: white;
+            animation: fadeIn 1s ease-out 0.5s backwards;
         }
 
         .welcome-year {
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 8rem;
+            font-size: 5rem;
             font-weight: 900;
-            position: absolute;
-            bottom: 10%;
-            opacity: 0;
-            animation: fadeInText 0.6s ease forwards;
-            animation-delay: 0.9s;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 10px;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out 0.7s backwards;
         }
 
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        body.no-scroll {
+        body.welcome-active {
             overflow: hidden;
         }
 
         @media (max-width: 768px) {
             .welcome-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .welcome-subtitle {
-                font-size: 1rem;
+                font-size: 2rem;
             }
             .welcome-year {
-                font-size: 5rem;
-            }
-            .welcome-logo {
-                width: 120px;
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Welcome Screen -->
-    <div id="welcome-screen">
+    <div id="welcome-screen" class="welcome-screen">
         <div class="welcome-content">
-            <img src="LOGO AYSEF.png" alt="AYSEF Logo" class="welcome-logo">
+            <div class="welcome-logo">
+                <img src="LOGO AYSEF.png" alt="AYSEF Logo">
+            </div>
             <h1 class="welcome-title">Welcome</h1>
             <p class="welcome-subtitle">ASEAN Youth Science and Economic Forum</p>
         </div>
@@ -2733,7 +2739,7 @@
             const welcomeScreen = document.getElementById('welcome-screen');
             if (welcomeScreen) {
                 // Prevent body scroll while welcome screen is active
-                document.body.classList.add('no-scroll');
+                document.body.classList.add('welcome-active');
 
                 // After 3 seconds, start fade out
                 setTimeout(function() {
@@ -2742,7 +2748,7 @@
                     // After fade out animation (0.8s), remove from DOM and restore scroll
                     setTimeout(function() {
                         welcomeScreen.remove();
-                        document.body.classList.remove('no-scroll');
+                        document.body.classList.remove('welcome-active');
                     }, 800);
                 }, 3000);
             }
